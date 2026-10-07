@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Practice Site</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: #ffffff;
+            color: #111;
+        }
+
+        .container {
+            width: 87%;
+            max-width: 1120px;
+            margin: 5px auto;
+            border-radius: 5px;
+            overflow: hidden;
+            box-shadow: 0 0 4px rgba(0, 0, 0, 0.15);
+        }
+
+        /* ================= HEADER ================= */
+
+        header {
+            background: #e8e1fa;
+            padding: 22px 38px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo h1 {
+            font-size: 28px;
+            margin-bottom: 8px;
+        }
+
+        .logo p {
+            font-size: 16px;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 45px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #111;
+            font-size: 16px;
+        }
+
+        nav a.active {
+            color: #3c216e;
+            font-weight: bold;
+        }
+
+        /* ================= HERO ================= */
+
+        .hero {
+            background: #eaf8e9;
+            padding: 24px 62px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .hero-text {
+            width: 52%;
+        }
+
+        .hero h2 {
+            font-size: 30px;
+            margin-bottom: 18px;
+        }
+
+        .hero p {
+            font-size: 15px;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+
+        .button {
+            display: inline-block;
+            background: #20aa69;
+            color: white;
+            text-decoration: none;
+            padding: 12px 30px;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+
+        .hero-image {
+            width: 32%;
+            height: 192px;
+            background: #a9dff6;
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* Simple CSS landscape */
+
+        .sun {
+            position: absolute;
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            background: #ffd34e;
+            top: 30px;
+            left: 42px;
+        }
+
+        .mountain-one {
+            position: absolute;
+            bottom: 0;
+            left: -15px;
+            width: 150px;
+            height: 120px;
+            background: #42a994;
+            clip-path: polygon(0 100%, 60% 20%, 100% 100%);
+        }
+
+        .mountain-two {
+            position: absolute;
+            bottom: 0;
+            right: -20px;
+            width: 260px;
+            height: 145px;
+            background: #42a994;
+            clip-path: polygon(0 100%, 55% 5%, 100% 100%);
+        }
+
+        /* ================= SERVICES ================= */
+
+        .services {
+            padding: 24px 62px 35px;
+        }
+
+        .services > h2 {
+            text-align: center;
+            font-size: 25px;
+            margin-bottom: 16px;
+        }
+
+        .service-container {
+            display: flex;
+            gap: 26px;
+        }
+
+        .service-card {
+            flex: 1;
+            height: 182px;
+            border-radius: 5px;
+            padding: 16px 25px;
+            text-align: center;
+        }
+
+        .design {
+            background: #e9f5ff;
+        }
+
+        .development {
+            background: #fff8df;
+        }
+
+        .support {
+            background: #fff0f5;
+        }
+
+        .icon {
+            width: 68px;
+            height: 68px;
+            border-radius: 50%;
+            margin: 0 auto 10px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            font-size: 30px;
+            font-weight: bold;
+        }
+
+        .design .icon {
+            background: #3188d8;
+        }
+
+        .development .icon {
+            background: #f2b900;
+        }
+
+        .support .icon {
+            background: #dd4d82;
+        }
+
+        .service-card h3 {
+            font-size: 20px;
+            margin-bottom: 8px;
+        }
+
+        .design h3 {
+            color: #2677bd;
+        }
+
+        .development h3 {
+            color: #e4a600;
+        }
+
+        .support h3 {
+            color: #d34b7c;
+        }
+
+        .service-card p {
+            font-size: 14px;
+            line-height: 1.45;
+        }
+
+        /* ================= ABOUT ================= */
+
+        .about {
+            padding: 8px 62px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .about-text {
+            width: 52%;
+        }
+
+        .about h2 {
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+
+        .about p {
+            font-size: 14px;
+            line-height: 1.7;
+        }
+
+        .about-image {
+            width: 35%;
+            height: 108px;
+            background: #f0f0f0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .about-image::before {
+            content: "";
+            position: absolute;
+            bottom: 10px;
+            left: 25%;
+            width: 65%;
+            height: 65px;
+            background: #c7c7c7;
+            clip-path: polygon(
+                0 100%,
+                35% 20%,
+                55% 60%,
+                70% 35%,
+                100% 100%
+            );
+        }
+
+        .about-image::after {
+            content: "";
+            position: absolute;
+            width: 25px;
+            height: 25px;
+            border-radius: 50%;
+            background: #c7c7c7;
+            top: 25px;
+            right: 35%;
+        }
+
+        /* ================= FOOTER ================= */
+
+        footer {
+            background: #e8e1fa;
+            text-align: center;
+            padding: 14px;
+            font-size: 14px;
+            color: #333;
+        }
+
+        footer p {
+            margin-bottom: 8px;
+        }
+
+        footer a {
+            color: #3d315f;
+            text-decoration: none;
+            margin: 0 8px;
+        }
+
+        /* ================= RESPONSIVE ================= */
+
+        @media (max-width: 800px) {
+
+            header {
+                flex-direction: column;
+                text-align: center;
+                gap: 20px;
+            }
+
+            nav ul {
+                gap: 20px;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            .hero {
+                flex-direction: column;
+                gap: 25px;
+            }
+
+            .hero-text,
+            .about-text {
+                width: 100%;
+            }
+
+            .hero-image,
+            .about-image {
+                width: 100%;
+            }
+
+            .service-container {
+                flex-direction: column;
+            }
+
+            .service-card {
+                width: 100%;
+            }
+
+            .about {
+                flex-direction: column;
+                gap: 20px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="container">
+
+    <!-- HEADER -->
+    <header>
+        <div class="logo">
+            <h1>My Practice Site</h1>
+            <p>A simple template to practice CSS</p>
+        </div>
+
+        <nav>
+            <ul>
+                <li><a href="#" class="active">Home</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Services</a></li>
+                <li><a href="#">Gallery</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+
+    <!-- HERO -->
+    <section class="hero">
+
+        <div class="hero-text">
+            <h2>Welcome!</h2>
+
+            <p>
+                This is a very simple website template.<br>
+                You can use this to practice CSS.
+            </p>
+
+            <a href="#" class="button">Learn More</a>
+        </div>
+
+        <div class="hero-image">
+            <div class="sun"></div>
+            <div class="mountain-one"></div>
+            <div class="mountain-two"></div>
+        </div>
+
+    </section>
+
+
+    <!-- SERVICES -->
+    <section class="services">
+
+        <h2>Our Services</h2>
+
+        <div class="service-container">
+
+            <div class="service-card design">
+                <div class="icon">▱</div>
+                <h3>Design</h3>
+                <p>
+                    We create simple and clean<br>
+                    designs for your needs.
+                </p>
+            </div>
+
+            <div class="service-card development">
+                <div class="icon">&lt;/&gt;</div>
+                <h3>Development</h3>
+                <p>
+                    We build websites using<br>
+                    HTML, CSS and JavaScript.
+                </p>
+            </div>
+
+            <div class="service-card support">
+                <div class="icon">●</div>
+                <h3>Support</h3>
+                <p>
+                    We are here to help you<br>
+                    whenever you need us.
+                </p>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ABOUT -->
+    <section class="about">
+
+        <div class="about-text">
+            <h2>About Us</h2>
+
+            <p>
+                This is a practice template for beginners who are learning CSS.<br>
+                You can change the colors, fonts, and layout to make it your own!
+            </p>
+        </div>
+
+        <div class="about-image"></div>
+
+    </section>
+
+
+    <!-- FOOTER -->
+    <footer>
+        <p>© 2025 My Practice Site. All rights reserved.</p>
+
+        <div>
+            <a href="#">Privacy Policy</a>
+            |
+            <a href="#">Terms of Use</a>
+            |
+            <a href="#">Contact Us</a>
+        </div>
+    </footer>
+
+</div>
+
+</body>
+</html>
